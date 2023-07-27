@@ -1,28 +1,16 @@
 
-import { GoTrashcan } from 'react-icons/go';
-import Button from './Button';
-import ExpandablePanel from './ExpandablePanel';
-import AlbumsList from './AlbumsList';
 
 import { UserType } from "../types";
 type UserListItemProps = {
-    users: UserType[] | []
+    user: UserType
 }
 
-const UserListItem = ({users}:UserListItemProps) => {
-
-    const header = (
-        <>
-          <Button className="mr-3" loading={isLoading} onClick={handleClick}>
-            <GoTrashcan />
-          </Button>
-          {error && <div>Error deleting user.</div>}
-          {user.name}
-        </>
-      );
-      
+const UserListItem = ({user}:UserListItemProps) => {
+    
     return (
-        <></>
+        <div>
+            <h6>{user.name}</h6>
+        </div>
     )
 }
 export default UserListItem;
